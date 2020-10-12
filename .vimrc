@@ -21,7 +21,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'ycm-core/YouCompleteMe'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'

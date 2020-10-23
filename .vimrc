@@ -25,9 +25,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'xuyuanp/nerdtree-git-plugin'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -192,3 +193,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " Plugin settings
 let g:airline_theme='solarized'
+
+" NERDTree bind
+map <C-n> :NERDTreeToggle<CR>
+" Autoclose if the only window open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

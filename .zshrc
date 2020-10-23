@@ -110,8 +110,20 @@ prompt_context() {
   fi
 }
 
+# Dev
+# ====================================================
 
+# Python
 
-# DEV
+# Using this function to activate venvs will have them automatically activate in tmux too
+function setvenv() {
+    source venv/bin/activate &&
+    tmux set-environment VIRTUAL_ENV $VIRTUAL_ENV
+}
+if [ -n "$VIRTUAL_ENV" ]; then
+    source $VIRTUAL_ENV/bin/activate;
+fi
+
+# Node
 export NODE_ENV=wsl-dev
 

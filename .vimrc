@@ -1,3 +1,6 @@
+" Stops YCM warning
+set encoding=utf-8
+
 " Features {{{1
 "
 " These options and commands enable some very useful features in Vim, that

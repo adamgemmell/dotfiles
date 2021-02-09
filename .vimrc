@@ -32,6 +32,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'rust-lang/rust'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -196,6 +197,16 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " Plugin settings
 let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+let g:ycm_language_server =
+\ [
+\   {
+\     'name': 'rust',
+\     'cmdline': ['rust-analyzer'],
+\     'filetypes': ['rust'],
+\     'project_root_files': ['Cargo.toml']
+\   }
+\ ]
 
 " NERDTree bind
 map <C-n> :NERDTreeToggle<CR>

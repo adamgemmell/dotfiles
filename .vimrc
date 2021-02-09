@@ -201,3 +201,6 @@ let g:airline_theme='solarized'
 map <C-n> :NERDTreeToggle<CR>
 " Autoclose if the only window open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+set background=dark
+colorscheme solarized

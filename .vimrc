@@ -213,5 +213,7 @@ map <C-n> :NERDTreeToggle<CR>
 " Autoclose if the only window open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+autocmd InsertEnter,InsertLeave * set cul!
+
 set background=dark
 colorscheme solarized

@@ -68,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-interactive-cd scd rust)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -130,3 +130,5 @@ fi
 # Node
 export NODE_ENV=wsl-dev
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -32,7 +32,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
-Plugin 'rust-lang/rust'
+Plugin 'rust-lang/rust.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'

@@ -195,6 +195,8 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
+let g:python3_host_prog='/usr/bin/python3'
+
 " Plugin settings
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
@@ -207,6 +209,11 @@ let g:ycm_language_server =
 \     'project_root_files': ['Cargo.toml']
 \   }
 \ ]
+
+" bash preamble
+augroup templates
+    autocmd BufNewFile *.sh 0r ~/.vim/templates/bashskeleton.sh
+augroup END
 
 " NERDTree bind
 map <C-n> :NERDTreeToggle<CR>

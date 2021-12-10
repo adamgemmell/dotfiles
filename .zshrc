@@ -101,7 +101,7 @@ setopt nosharehistory
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ll="ls -lah"
+alias ll="ls -laFh"
 alias tmux="tmux -u" # unicode
 
 # dotfiles git setup

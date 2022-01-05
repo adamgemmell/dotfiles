@@ -1,8 +1,17 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=${HOME}/.local/bin:/usr/local/bin:${PATH}
+
+case "$OSTYPE" in
+    darwin*)
+        DARWIN="true"
+    ;;
+    linux*)
+        LINUX="true"
+    ;;
+esac
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/${USER}/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -102,7 +111,7 @@ setopt nosharehistory
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ll="ls -laFh"
-alias tmux="tmux -u" # unicode
+alias tmux="tmux -u -2" # unicode, 256
 
 # dotfiles git setup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

@@ -26,13 +26,20 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'ycm-core/YouCompleteMe'
+
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
+
 Plugin 'rust-lang/rust.vim'
+Plugin 'neovim/nvim-lspconfig'
+Plugin 'simrat39/rust-tools.nvim'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'mfussenegger/nvim-dap'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -209,6 +216,8 @@ let g:ycm_language_server =
 \     'project_root_files': ['Cargo.toml']
 \   }
 \ ]
+
+set rtp+=/opt/homebrew/opt/fzf
 
 " bash preamble
 augroup templates

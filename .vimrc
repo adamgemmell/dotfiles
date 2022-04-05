@@ -202,6 +202,12 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
+" Move windows
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 let g:python3_host_prog='/usr/bin/python3'
 
 " Plugin settings

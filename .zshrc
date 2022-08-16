@@ -112,6 +112,7 @@ setopt nosharehistory
 
 alias ll="ls -laFh"
 alias tmux="tmux -u -2" # unicode, 256
+alias rg="rg -S"
 
 # dotfiles git setup
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

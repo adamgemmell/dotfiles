@@ -27,11 +27,25 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 
-Plug 'rust-lang/rust.vim'
+" LSP
+" Common configurations
 Plug 'neovim/nvim-lspconfig'
+
+" Autocompletion
+Plug 'hrsh7th/nvim-cmp'
+" LSP completion
+Plug 'hrsh7th/cmp-nvim-lsp'
+" Snippet completion
+Plug 'hrsh7th/cmp-vsnip'
+" Path completion
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-buffer'
+
+" Extra functionality over rust analyzer
 Plug 'simrat39/rust-tools.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'mfussenegger/nvim-dap'
+
+" Snippet engine
+Plug 'hrsh7th/vim-vsnip'
 
 call plug#end()
 
@@ -175,17 +189,20 @@ map Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+noremap <C-L> :nohl<CR><C-L>
 
 " Move windows
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+"noremap <C-h> <C-w>h
+"noremap <C-j> <C-w>j
+"noremap <C-k> <C-w>k
+"noremap <C-l> <C-w>l
 
 let g:python3_host_prog='/usr/bin/python3'
 
 " Plugin settings
+set background=dark
+colorscheme solarized
+
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 
@@ -203,5 +220,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 autocmd InsertEnter,InsertLeave * set cul!
 
-set background=dark
-colorscheme solarized
+" LSP Options
+
+" Set completeopt to have a better completion experience
+" :help completeopt
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing extra messages when using completion
+set shortmess+=c

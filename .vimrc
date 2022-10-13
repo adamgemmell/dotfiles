@@ -26,6 +26,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'wellle/context.vim'
 
 " LSP
 " Common configurations
@@ -202,6 +204,11 @@ let g:python3_host_prog='/usr/bin/python3'
 " Plugin settings
 set background=dark
 colorscheme solarized
+highlight clear SignColumn
+"highlight GitGutterAdd ctermbg=dark
+"highlight GitGutterChange ctermbg=dark
+"highlight GitGutterDelete ctermbg=dark
+"highlight GitGutterChangeDelete ctermbg=dark
 
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1

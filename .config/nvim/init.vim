@@ -15,9 +15,9 @@ rt.setup({
         autoSetHints = true,
         --hover_with_actions = true,
         inlay_hints = {
-            show_parameter_hints = true,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
+            --show_parameter_hints = true,
+            --parameter_hints_prefix = "",
+            --other_hints_prefix = "",
         },
     },
 
@@ -36,10 +36,21 @@ rt.setup({
             -- to enable rust-analyzer settings visit:
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
             ["rust-analyzer"] = {
+                cachePriming = {
+                    enable = false,
+                },
                 -- enable clippy on save
                 checkOnSave = {
                     command = "clippy"
                 },
+                diagnostics = {
+                    experimental = {
+                        enable = true,
+                    }
+                },
+                procMacro = {
+                    enable = true,
+                }
             }
         }
     },

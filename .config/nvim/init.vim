@@ -1,5 +1,9 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
+
+lua vim.g.mapleader = ' '
+lua vim.g.maplocalleader = ' '
+
 source ~/.vimrc
 
 set exrc

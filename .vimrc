@@ -49,6 +49,9 @@ Plug 'simrat39/rust-tools.nvim'
 " Snippet engine
 Plug 'hrsh7th/vim-vsnip'
 
+" Debugging support
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
+
 call plug#end()
 
 " Attempt to determine the type of a file based on its name and possibly its

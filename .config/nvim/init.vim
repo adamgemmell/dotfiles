@@ -29,6 +29,11 @@ rt.setup({
     -- these override the defaults set by rust-tools.nvim
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
     server = {
+        -- standalone file support
+        -- setting it to false may improve startup time
+        standalone = false,
+
+
         -- on_attach is a callback called when the language server attachs to the buffer
         on_attach = function(_, bufnr)
           -- Hover actions
@@ -51,6 +56,14 @@ rt.setup({
                     experimental = {
                         enable = true,
                     }
+                },
+                inlayHints = {
+                    reborrowHints = {
+                        enable = true,
+                    },
+                    lifetimeElisionHints = {
+                        enable = true,
+                    },
                 },
                 procMacro = {
                     enable = true,
@@ -126,3 +139,20 @@ autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 " Goto previous/next diagnostic warning/error
 nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
+
+" nvim-gdb
+" We're going to define single-letter keymaps, so don't try to define them
+" in the terminal window.  The debugger CLI should continue accepting text commands.
+function! NvimGdbNoTKeymaps()
+  tnoremap <silent> <buffer> <esc> <c-\><c-n>
+endfunction
+
+let g:nvimgdb_config_override = {
+  \ 'key_next': 'n',
+  \ 'key_step': 's',
+  \ 'key_finish': 'f',
+  \ 'key_continue': 'c',
+  \ 'key_until': 'u',
+  \ 'key_breakpoint': 'b',
+  \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
+  \ }

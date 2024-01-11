@@ -118,4 +118,11 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# SSH Agent should be running, once
+runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
+if [ $runcount -eq 0 ]; then
+    echo Starting SSH Agent
+    eval $(ssh-agent -s)
+fi
+
 . "$HOME/.cargo/env"

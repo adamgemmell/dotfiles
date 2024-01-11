@@ -205,7 +205,7 @@ noremap <C-L> :nohl<CR><C-L>
 let g:python3_host_prog='/usr/bin/python3'
 
 " Plugin settings
-set background=dark
+set background=light
 colorscheme solarized
 highlight clear SignColumn
 "highlight GitGutterAdd ctermbg=dark
